@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>ユーザ追加</title>
+</head>
+
+<body>
+<h1>ユーザ追加</h1>
+
+<%= form_for User.new do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+<% end %>
+
+<a href="/users">ユーザ一覧に戻る</a>
+
+</body>
+
+</html>
