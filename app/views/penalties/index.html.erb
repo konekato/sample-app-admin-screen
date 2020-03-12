@@ -15,7 +15,7 @@
         </tr>
         <% @penalties.each do |penalty| %>
         <tr>
-            <td><a href="/admin/penalties/u/<%= penalty.target_user_id %>"><%= penalty.target_user_id %></td>
+            <td><a href="/admin/penalties/u/<%= penalty.target_user_id %>"><%= penalty.target_user_id %></a></td>
             <td><%= penalty.name %></td>
             <td><%= penalty.counts %></td>
         </tr>
