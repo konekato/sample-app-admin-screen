@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>ペナルティ一覧</title>
+</head>
+
+<body>
+    <h1>ペナルティ一覧</h1>
+    <table border="1">
+        <tr>
+            <th>ユーザID</th>
+            <th>ユーザ名</th>
+            <th>ペナルティ数</th>
+        </tr>
+        <% @penalties.each do |penalty| %>
+        <tr>
+            <td><a href="/admin/penalties/u/<%= penalty.target_user_id %>"><%= penalty.target_user_id %></td>
+            <td><%= penalty.name %></td>
+            <td><%= penalty.counts %></td>
+        </tr>
+        <% end %>
+    </table>
+</body>
+
+</html>

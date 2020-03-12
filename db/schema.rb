@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_083157) do
+ActiveRecord::Schema.define(version: 2020_03_09_123719) do
+
+  create_table "penalties", force: :cascade do |t|
+    t.integer "target_user_id"
+    t.integer "count"
+    t.text "reason"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
