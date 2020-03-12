@@ -9,9 +9,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new
     @user.name = params[:user][:name]
-    if @user.name = "" then
-      @user.name = "no name"
-    end
     @user.save
     redirect_to '/users'
   end
