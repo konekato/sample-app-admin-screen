@@ -10,6 +10,8 @@ class PenaltiesController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:target_user_id])
+    @penalties = Penalty.where("target_user_id = ?", params[:target_user_id])
   end
 
   def destroy

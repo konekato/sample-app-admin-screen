@@ -1,2 +1,29 @@
-<h1>Penalties#show</h1>
-<p>Find me in app/views/penalties/show.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+<title><%= @user.name %>の履歴</title>
+</head>
+
+<body>
+    <h1><%= @user.name %></h1>
+    <h3>ペナルティ履歴</h3>
+    <table border="1">
+        <tr>
+            <th>日時</th>
+            <th>ペナルティ数</th>
+            <th>理由</th>
+        </tr>
+        <% @penalties.each do |penalty| %>
+        <tr>
+            <td><%= penalty.created_at %></td>
+            <td><%= penalty.count %></td>
+            <td><%= penalty.reason %></td>
+        </tr>
+        <% end %>
+    </table>
+
+    <a href="/admin/penalties/list">ペナルティ一覧に戻る</a>
+</body>
+
+</html>
