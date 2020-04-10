@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'admin/penalties/list' => "penalties#index"
-  get 'admin/penalties/add' => "penalties#new"
-  get 'admin/penalties/u/:target_user_id' => "penalties#show"
-  get 'admin/penalties/destroy'
+  get 'admin/penalties/list', to: 'penalties#index', as: 'penalties'
+  get 'admin/penalties/u/:target_user_id', to: 'penalties#show', as: 'penalty'
+  post 'admin/penalties/u/:target_user_id', to: 'penalties#create'
+  get 'admin/penalties/destroy', to: 'penalties#destroy'
 
-  get 'users' => "users#index"
-  get 'users/add' => "users#new"
-  post 'users' => "users#create"
+  get 'users', to: 'users#index'
+  get 'users/add', to: 'users#new', as: 'user'
+  post 'users', to: 'users#create'
 end
