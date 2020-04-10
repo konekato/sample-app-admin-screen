@@ -24,6 +24,13 @@
     </table>
 
     <a href="/admin/penalties/list">ペナルティ一覧に戻る</a>
+
+    <h3>ペナルティ追加</h3>
+    <%= form_for @penalty, url: penalty_path do |f| %>
+        <%= f.text_field :reason %>
+        <%= f.select :count, [1,2,3,4,5] %>
+        <%= f.submit %>
+    <% end %>
 </body>
 
 </html>

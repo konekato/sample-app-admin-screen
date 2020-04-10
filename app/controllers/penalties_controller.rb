@@ -7,11 +7,19 @@ class PenaltiesController < ApplicationController
   end
 
   def create
+    @penalty = Penalty.new
+    @penalty.target_user_id = params[:target_user_id]
+    @penalty.reason = params[:penalty][:reason]
+    @penalty.count = params[:penalty][:count]
+    @penalty.save
+    redirect_to '/admin/penalties/u/' + params[:target_user_id]
   end
 
   def show
     @user = User.find(params[:target_user_id])
     @penalties = Penalty.where("target_user_id = ?", params[:target_user_id])
+  
+    @penalty = Penalty.new
   end
 
   def destroy
